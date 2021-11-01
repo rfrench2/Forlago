@@ -14,8 +14,17 @@
  * limitations under the License.
  */
 
-package com.leinardi.template.ui.theme
+package com.leinardi.template.foo.ui.debug
 
-import androidx.compose.material.Shapes
+import com.leinardi.template.ui.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-val TemplateShapes = Shapes()
+@HiltViewModel
+class FooDebugViewModel @Inject constructor() : BaseViewModel<FooDebugContract.Event, FooDebugContract.State, FooDebugContract.Effect>() {
+    override fun provideInitialState() = FooDebugContract.State
+
+    override fun handleEvent(event: FooDebugContract.Event) {
+        // no-op
+    }
+}

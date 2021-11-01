@@ -14,33 +14,20 @@
  * limitations under the License.
  */
 
-package com.leinardi.template.navigation.destination.bar
+package com.leinardi.template.navigation.destination.debug
 
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
 import com.leinardi.template.navigation.BuildConfig
 import com.leinardi.template.navigation.NavigationDestination
 
-object BarDestination : NavigationDestination {
-    const val TEXT_PARAM = "text"
-    private const val BAR_ROUTE = "bar"
-
-    override val arguments = listOf(
-        navArgument(TEXT_PARAM) {
-            type = NavType.StringType
-            nullable = true
-            defaultValue = null
-        }
-    )
+object DebugDestination : NavigationDestination {
+    private const val DEBUG_ROUTE = "debug"
 
     override val deepLinks = listOf(
         navDeepLink {
-            uriPattern = "${BuildConfig.DEEP_LINK_SCHEMA}://$BAR_ROUTE/{$TEXT_PARAM}"
+            uriPattern = "${BuildConfig.DEEP_LINK_SCHEMA}://$DEBUG_ROUTE"
         }
     )
 
-    override fun route() = "$BAR_ROUTE/?$TEXT_PARAM={$TEXT_PARAM}"
-
-    fun createRoute(text: String) = "$BAR_ROUTE/?$TEXT_PARAM=$text"
+    override fun route() = DEBUG_ROUTE
 }

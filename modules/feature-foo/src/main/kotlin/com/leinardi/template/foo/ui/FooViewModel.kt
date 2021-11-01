@@ -44,7 +44,7 @@ class FooViewModel @Inject constructor(
             updateState { viewState.value.copy(isLoading = true) }
             delay(TimeUnit.SECONDS.toMillis(2))
             updateState { viewState.value.copy(isLoading = false) }
-            templateNavigator.navigate(BarDestination.createBarRoute(text))
+            templateNavigator.navigate(BarDestination.createRoute(text))
         }
     }
 }

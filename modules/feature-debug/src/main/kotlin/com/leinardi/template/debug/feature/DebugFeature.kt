@@ -14,8 +14,18 @@
  * limitations under the License.
  */
 
-package com.leinardi.template.ui.theme
+package com.leinardi.template.debug.feature
 
-import androidx.compose.material.Shapes
+import androidx.compose.runtime.Composable
+import com.leinardi.template.debug.ui.DebugScreen
+import com.leinardi.template.feature.Feature
+import com.leinardi.template.navigation.NavigationDestination
+import com.leinardi.template.navigation.destination.debug.DebugDestination
 
-val TemplateShapes = Shapes()
+class DebugFeature : Feature() {
+    override val id = "Debug"
+
+    override val composableDestinations: Map<NavigationDestination, @Composable () -> Unit> = mapOf(
+        DebugDestination to { DebugScreen() }
+    )
+}

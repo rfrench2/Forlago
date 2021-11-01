@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-package com.leinardi.template.ui.theme
+package com.leinardi.template.feature.interactor
 
-import androidx.compose.material.Shapes
+import com.leinardi.template.feature.FeatureManager
+import javax.inject.Inject
 
-val TemplateShapes = Shapes()
+class GetFeaturesInteractor @Inject constructor(
+    private val featureManager: FeatureManager
+) {
+    operator fun invoke() = featureManager.features
+}

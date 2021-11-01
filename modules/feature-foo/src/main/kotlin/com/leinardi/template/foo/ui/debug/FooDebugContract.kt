@@ -14,8 +14,16 @@
  * limitations under the License.
  */
 
-package com.leinardi.template.ui.theme
+package com.leinardi.template.foo.ui.debug
 
-import androidx.compose.material.Shapes
+import com.leinardi.template.ui.base.ViewEffect
+import com.leinardi.template.ui.base.ViewEvent
+import com.leinardi.template.ui.base.ViewState
 
-val TemplateShapes = Shapes()
+class FooDebugContract {
+    object State : ViewState
+
+    sealed class Event : ViewEvent
+
+    sealed class Effect : ViewEffect
+}

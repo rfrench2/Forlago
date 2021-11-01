@@ -14,8 +14,19 @@
  * limitations under the License.
  */
 
-package com.leinardi.template.ui.theme
+plugins {
+    id 'template.android-feature-conventions'
+}
 
-import androidx.compose.material.Shapes
+android {
+    resourcePrefix 'debug_'
+    defaultConfig {
+        consumerProguardFiles "$projectDir/proguard-debug-consumer-rules.pro"
+    }
+}
 
-val TemplateShapes = Shapes()
+dependencies {
+    implementation libs.androidx.lifecycle.process
+    implementation libs.androidx.startup
+    implementation libs.seismic
+}

@@ -56,7 +56,7 @@ fun BarScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = "Foo screen",
+                title = "Bar screen",
                 navigateUp = { sendEvent(BarContract.Event.OnUpButtonClicked) }
             )
         },

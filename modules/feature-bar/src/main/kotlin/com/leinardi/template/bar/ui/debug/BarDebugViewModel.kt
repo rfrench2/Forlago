@@ -14,8 +14,17 @@
  * limitations under the License.
  */
 
-package com.leinardi.template.ui.theme
+package com.leinardi.template.bar.ui.debug
 
-import androidx.compose.material.Shapes
+import com.leinardi.template.ui.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-val TemplateShapes = Shapes()
+@HiltViewModel
+class BarDebugViewModel @Inject constructor() : BaseViewModel<BarDebugContract.Event, BarDebugContract.State, BarDebugContract.Effect>() {
+    override fun provideInitialState() = BarDebugContract.State
+
+    override fun handleEvent(event: BarDebugContract.Event) {
+        // no-op
+    }
+}
