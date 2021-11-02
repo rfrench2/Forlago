@@ -34,6 +34,7 @@ import com.leinardi.template.navigation.destination.foo.FooDestination
 import com.leinardi.template.ui.theme.TemplateTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -44,6 +45,7 @@ class MainActivity : ComponentActivity() {
     lateinit var navHostController: NavHostController
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Timber.d("onCreate()")
         super.onCreate(savedInstanceState)
         installSplashScreen()
         setContent {
@@ -65,6 +67,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TemplateScaffold(navController: NavHostController, templateNavigator: TemplateNavigator) {
+    Timber.d("TemplateScaffold()")
     LaunchedEffect(navController) {
         templateNavigator.destinations.collect {
             when (val event = it) {

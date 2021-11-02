@@ -16,8 +16,6 @@
 
 package com.leinardi.template.navigation.destination.bar
 
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
 import com.leinardi.template.navigation.BuildConfig
 import com.leinardi.template.navigation.NavigationDestination
@@ -26,21 +24,13 @@ object BarDestination : NavigationDestination {
     const val TEXT_PARAM = "text"
     private const val BAR_ROUTE = "bar"
 
-    override val arguments = listOf(
-        navArgument(TEXT_PARAM) {
-            type = NavType.StringType
-            nullable = true
-            defaultValue = null
-        }
-    )
-
     override val deepLinks = listOf(
         navDeepLink {
-            uriPattern = "${BuildConfig.DEEP_LINK_SCHEMA}://$BAR_ROUTE/{$TEXT_PARAM}"
+            uriPattern = "${BuildConfig.DEEP_LINK_SCHEMA}://$BAR_ROUTE"
         }
     )
 
-    override fun route() = "$BAR_ROUTE/?$TEXT_PARAM={$TEXT_PARAM}"
+    override fun route() = "$BAR_ROUTE"
 
-    fun createRoute(text: String) = "$BAR_ROUTE/?$TEXT_PARAM=$text"
+    fun createRoute(text: String) = "$BAR_ROUTE"
 }

@@ -16,9 +16,7 @@
 
 package com.leinardi.template.bar.ui
 
-import androidx.lifecycle.SavedStateHandle
 import com.leinardi.template.navigation.TemplateNavigator
-import com.leinardi.template.navigation.destination.bar.BarDestination
 import com.leinardi.template.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -26,9 +24,8 @@ import javax.inject.Inject
 @HiltViewModel
 class BarViewModel @Inject constructor(
     private val templateNavigator: TemplateNavigator,
-    private val savedStateHandle: SavedStateHandle,
 ) : BaseViewModel<BarContract.Event, BarContract.State, BarContract.Effect>() {
-    override fun provideInitialState() = BarContract.State(savedStateHandle[BarDestination.TEXT_PARAM] ?: "")
+    override fun provideInitialState() = BarContract.State("")
 
     override fun handleEvent(event: BarContract.Event) {
         when (event) {

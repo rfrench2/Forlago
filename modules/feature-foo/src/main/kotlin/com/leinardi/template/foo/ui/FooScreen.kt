@@ -25,7 +25,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
-import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
 import androidx.compose.material.Text
@@ -79,7 +78,6 @@ fun FooScreen(
             }
         }.collect()
     }
-    var textFieldValue by rememberSaveable(stateSaver = TextFieldValue.Saver) { mutableStateOf(TextFieldValue(state.text)) }
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = { TopAppBar(title = "Foo screen") },
@@ -92,28 +90,16 @@ fun FooScreen(
                     .semantics { contentDescription = "Foo" },
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                OutlinedTextField(
-                    value = textFieldValue,
-                    onValueChange = { textFieldValue = it },
-                    modifier = Modifier.fillMaxWidth(),
-                    label = { Text("Type something here plz...") }
-                )
                 Button(
-                    onClick = { sendEvent(FooContract.Event.OnBarButtonClicked(textFieldValue.text)) },
+                    onClick = { sendEvent(FooContract.Event.OnBarButtonClicked("text")) },
                     enabled = !state.isLoading,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     if (state.isLoading) {
                         AutoSizedCircularProgressIndicator(Modifier.size(20.dp))
                     } else {
-                        Text("Send text to Bar screen")
+                        Text("Open Bar screen")
                     }
-                }
-                Button(
-                    onClick = { sendEvent(FooContract.Event.OnShowSnackbarButtonClicked) },
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text("Show Snackbar")
                 }
             }
         }
@@ -123,5 +109,5 @@ fun FooScreen(
 @Preview
 @Composable
 fun FooScreenPreview() {
-    FooScreen(FooContract.State("Preview", true), Channel<FooContract.Effect>().receiveAsFlow()) {}
+    FooScreen(FooContract.State("Preview", false), Channel<FooContract.Effect>().receiveAsFlow()) {}
 }

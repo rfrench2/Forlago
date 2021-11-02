@@ -42,7 +42,7 @@ class StrictModeInitializer : Initializer<Unit> {
                 .detectLeakedRegistrationObjects()
                 .detectLeakedSqlLiteObjects()
                 .penaltyLog()
-                .penaltyDeath()
+//                .penaltyDeath()
                 .apply {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         detectContentUriWithoutPermission()
