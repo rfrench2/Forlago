@@ -29,7 +29,6 @@ class StrictModeInitializer : Initializer<Unit> {
             val builderThread = StrictMode.ThreadPolicy.Builder()
                 .detectAll()
                 .permitDiskReads()
-                .permitDiskWrites()
                 .permitCustomSlowCalls()
                 .penaltyLog()
                 .penaltyDeath()
