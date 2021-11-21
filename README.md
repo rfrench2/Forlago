@@ -85,6 +85,11 @@ to learn more about managing Play Store metadata.
 Once everything is properly configured, you can run the [release.yml](.github/workflows/release.yml) workflow to create a new release and upload the
 bundle to the Play Store.
 
+### Enabling Firebase Crashlytics
+
+The first step is to [register your new app with Firebase](https://firebase.google.com/docs/android/setup?hl=en) (don't forget to add [both release and
+debug packages](https://firebase.googleblog.com/2016/08/organizing-your-firebase-enabled-android-app-builds.html) to the same Firebase project).
+
 ## Contributing 🤝
 
 Feel free to open a issue or submit a pull request for any bugs/improvements.
