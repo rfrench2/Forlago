@@ -62,7 +62,7 @@ class Forlago : Application() {
                 .detectFileUriExposure()
                 .detectCleartextNetwork()
                 .penaltyLog()
-//                .penaltyDeath()
+                .penaltyDeath()
                 .apply {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         detectContentUriWithoutPermission()

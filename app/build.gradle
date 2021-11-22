@@ -17,7 +17,7 @@
 plugins {
     id 'forlago.android-app-conventions'
     id 'forlago.app-versioning-conventions'
-    id 'forlago.triplet-play-conventions'
+//    id 'forlago.triplet-play-conventions'
 }
 
 def useReleaseKeystore = rootProject.file("release/app-release.jks").exists()
