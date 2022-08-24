@@ -43,6 +43,7 @@ accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-
 android-maps-utils = { module = "com.google.maps.android:android-maps-utils", version = "2.3.0" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.5.0" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.4.2" }
+androidx-benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version = "1.1.0" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "androidx-compose" }
 androidx-compose-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "androidx-compose" }
 androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "androidx-compose" }
@@ -84,6 +85,7 @@ androidx-test-ext-junit = { module = "androidx.test.ext:junit-ktx", version = "1
 androidx-test-orchestrator = { module = "androidx.test:orchestrator", version = "1.4.1" }
 androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidx-test" }
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidx-test" }
+androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version = "2.2.0" }
 apollo = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
 apollo-adapters = { module = "com.apollographql.apollo3:apollo-adapters", version.ref = "apollo" }
 apollo-cache = { module = "com.apollographql.apollo3:apollo-normalized-cache", version.ref = "apollo" }
@@ -137,7 +139,7 @@ tink = { module = "com.google.crypto.tink:tink-android", version = "1.6.1" }
 
 # plugins
 plugin-aboutlibraries = { module = "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin", version.ref = "aboutlibraries" }
-plugin-android = { module = "com.android.tools.build:gradle", version = "7.2.1" }
+plugin-android = { module = "com.android.tools.build:gradle", version = "7.3.0-rc01" }
 plugin-androidcachefix = { module = "gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin", version = "2.5.5" }
 plugin-androidx-navigation-safeargs = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "androidx-navigation" }
 plugin-appversioning = { module = "io.github.reactivecircus.appversioning:app-versioning-gradle-plugin", version = "1.1.2" }
